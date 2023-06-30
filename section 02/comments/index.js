@@ -37,6 +37,13 @@ app.post("/posts/:id/comments", (req, res) => {
   res.status(201).send(comments);
 });
 
+// Receive events from event bus
+app.post("/events", (req, res) => {
+  console.log("Received Event", req.body.type);
+
+  res.send({});
+});
+
 app.listen(4001, () => {
   console.log("Listening on 4001");
 });
